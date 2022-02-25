@@ -2,7 +2,6 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 
 object AppDependencies {
     // std lib
-    private const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}" // TODO: Do we need this??
     private const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
 
     // android ui
@@ -15,8 +14,12 @@ object AppDependencies {
     private const val extJUnit = "androidx.test.ext:junit:${Versions.extJunit}"
     private const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espresso}"
 
+    // dependency injection
+    const val hiltAndroidGradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"
+    private const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
+    private const val hiltAnnotationProcessor = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+
     val appLibraries = arrayListOf<String>().apply {
-        add(kotlinStdLib)
         add(coreKtx)
         add(appcompat)
         add(constraintLayout)
@@ -31,28 +34,12 @@ object AppDependencies {
     val testLibraries = arrayListOf<String>().apply {
         add(junit)
     }
-}
 
-fun DependencyHandler.kapt(list: List<String>) {
-    list.forEach { dependency ->
-        add("kapt", dependency)
+    val hiltLibraries = arrayListOf<String>().apply {
+        add(hiltAndroid)
     }
-}
 
-fun DependencyHandler.implementation(list: List<String>) {
-    list.forEach { dependency ->
-        add("implementation", dependency)
-    }
-}
-
-fun DependencyHandler.androidTestImplementation(list: List<String>) {
-    list.forEach { dependency ->
-        add("androidTestImplementation", dependency)
-    }
-}
-
-fun DependencyHandler.testImplementation(list: List<String>) {
-    list.forEach { dependency ->
-        add("testImplementation", dependency)
+    val hiltAnnotationProcessorLibraries = arrayListOf<String>().apply {
+        add(hiltAnnotationProcessor)
     }
 }
