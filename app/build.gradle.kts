@@ -5,6 +5,9 @@ plugins {
     // Hilt
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
+
+    // nav safe args
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -52,4 +55,25 @@ dependencies {
     // dependency injection(HILT)
     implementation(AppDependencies.hiltLibraries)
     kapt(AppDependencies.hiltAnnotationProcessorLibraries)
+
+    // lifecycle libraries
+    implementation(AppDependencies.lifeCycleComponentLibraries)
+    testImplementation(AppDependencies.lifeCycleTestComponentLibraries)
+
+    // navigation graph libraries
+    implementation(AppDependencies.navGraphLibraries)
+    androidTestImplementation(AppDependencies.navGraphTestingLibraries)
+
+    // Room libraries
+    implementation(AppDependencies.roomLibraries)
+    kapt(AppDependencies.roomAnnotationProcessorLibraries)
+    testImplementation(AppDependencies.roomTestingLibraries)
+
+    // Work manager libraries
+    implementation(AppDependencies.workManagerLibraries)
+    androidTestImplementation(AppDependencies.workManagerTestingLibraries)
+
+    // Networking libraries
+    implementation(AppDependencies.networkingLibraries)
+    kapt(AppDependencies.networkingAnnotationProcessor)
 }

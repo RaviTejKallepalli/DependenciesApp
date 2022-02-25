@@ -3,6 +3,7 @@
 buildscript {
     dependencies {
         classpath(AppDependencies.hiltAndroidGradlePlugin)
+        classpath(AppDependencies.navSafeArgsPlugin)
     }
 }
 

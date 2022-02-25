@@ -1,5 +1,3 @@
-import org.gradle.api.artifacts.dsl.DependencyHandler
-
 object AppDependencies {
     // std lib
     private const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
@@ -19,11 +17,89 @@ object AppDependencies {
     private const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
     private const val hiltAnnotationProcessor = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
 
+    // Architecture components
+    private const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleVersion}"
+    private const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycleVersion}"
+    private const val lifeCycleCompiler = "androidx.lifecycle:lifecycle-common-java8:${Versions.lifecycleVersion}"
+
+    private const val livedataUnitTest = "androidx.arch.core:core-testing:${Versions.archVersion}"
+
+    // Navigation component
+    const val navSafeArgsPlugin = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navGraphVersion}"
+    private const val navigationUI = "androidx.navigation:navigation-ui-ktx:${Versions.navGraphVersion}"
+    private const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navGraphVersion}"
+
+    private const val navigationTesting = "androidx.navigation:navigation-testing:${Versions.navGraphVersion}"
+
+    // Room component
+    private const val roomRunTime = "androidx.room:room-runtime:${Versions.roomVersion}"
+    private const val roomAnnotationProcessor = "androidx.room:room-compiler:${Versions.roomVersion}"
+    private const val roomKotlinAndCoroutines = "androidx.room:room-ktx:${Versions.roomVersion}"
+
+    private const val roomTestingVersion = "androidx.room:room-testing:${Versions.roomVersion}"
+
+    // work manager component
+    private const val workManagerRunTime = "androidx.work:work-runtime-ktx:${Versions.workManagerVersion}"
+    private const val hiltWorkManager = "androidx.hilt:hilt-work:${Versions.hiltWorkManager}"
+    private const val hiltCompiler = "androidx.hilt:hilt-compiler:${Versions.hiltCompiler}"
+
+    private const val workManagerTesting = "androidx.work:work-testing:${Versions.workManagerVersion}"
+
+    // Networking
+    private const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    private const val okHttp = "com.squareup.okhttp3:okhttp:${Versions.okHttp}"
+    private const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.loggingInterceptor}"
+    private const val moshiKotlin = "com.squareup.moshi:moshi-kotlin:${Versions.moshi}"
+    private const val moshiCodeGenAnnotationProcessor = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshi}"
+    private const val moshiConverter = "com.squareup.retrofit2:converter-moshi:${Versions.moshiConverter}"
+
+    // Coroutines
+    private const val coroutineKtx = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutinesKtx}"
+
+    // Networking libraries
+    val networkingLibraries = arrayListOf<String>().apply {
+        add(retrofit)
+        add(okHttp)
+        add(loggingInterceptor)
+        add(moshiKotlin)
+        add(moshiConverter)
+    }
+
+    val networkingAnnotationProcessor = arrayListOf<String>().apply {
+        add(moshiCodeGenAnnotationProcessor)
+    }
+
+    // Work manager libraries
+    val workManagerLibraries = arrayListOf<String>().apply {
+        add(workManagerRunTime)
+        add(hiltWorkManager)
+    }
+
+    val workManagerTestingLibraries = arrayListOf<String>().apply {
+        add(workManagerTesting)
+    }
+
+    // Room Libraries
+    val roomLibraries = arrayListOf<String>().apply {
+        add(roomRunTime)
+        add(roomKotlinAndCoroutines)
+    }
+
+    val roomAnnotationProcessorLibraries = arrayListOf<String>().apply {
+        add(roomAnnotationProcessor)
+    }
+
+    val roomTestingLibraries = arrayListOf<String>().apply {
+        add(roomTestingVersion)
+    }
+
+    // App Libraries
     val appLibraries = arrayListOf<String>().apply {
         add(coreKtx)
         add(appcompat)
         add(constraintLayout)
         add(material)
+        add(coroutineKtx)
     }
 
     val androidTestLibraries = arrayListOf<String>().apply {
@@ -35,11 +111,34 @@ object AppDependencies {
         add(junit)
     }
 
+    // Hilt libraries
     val hiltLibraries = arrayListOf<String>().apply {
         add(hiltAndroid)
     }
 
     val hiltAnnotationProcessorLibraries = arrayListOf<String>().apply {
         add(hiltAnnotationProcessor)
+        add(hiltCompiler)
+    }
+
+    // Architecture components Libraries
+    val lifeCycleComponentLibraries = arrayListOf<String>().apply {
+        add(viewModel)
+        add(liveData)
+        add(lifeCycleCompiler)
+    }
+
+    val lifeCycleTestComponentLibraries = arrayListOf<String>().apply {
+        add(livedataUnitTest)
+    }
+
+    // Navigation Libraries
+    val navGraphLibraries = arrayListOf<String>().apply {
+        add(navigationUI)
+        add(navigationFragment)
+    }
+
+    val navGraphTestingLibraries = arrayListOf<String>().apply {
+        add(navigationTesting)
     }
 }
