@@ -6,19 +6,26 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.ravitej.dependenciesapp.R
 import com.ravitej.dependenciesapp.databinding.FragmentSplashBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class SplashFragment : Fragment() {
 
+    @Inject
+    lateinit var splashViewModelFactory: SplashViewModelFactory
     private lateinit var binding: FragmentSplashBinding
 
-    private val viewModel: SplashViewModel by lazy {
-        SplashViewModelFactory(
+    private val viewModel: SplashViewModel by viewModels {
+        provideFactory(
+            splashViewModelFactory,
             Bundle().apply { putString(USER_NAME, "Ravi Tej") }
-        ).create(SplashViewModel::class.java)
+        )
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
