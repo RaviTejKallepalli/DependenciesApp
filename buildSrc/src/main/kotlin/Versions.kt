@@ -49,4 +49,7 @@ object Versions {
     // Coroutines
     // https://developer.android.com/kotlin/coroutines?gclsrc=aw.ds&gclid=Cj0KCQiAmeKQBhDvARIsAHJ7mF6fveHEfg50-97uWpcOuEP3OXVYTw6ZK23wtpxv16ILB7Ypsy4P4lwaAorcEALw_wcB
     const val coroutinesKtx = "1.5.2"
+
+    // Glide(Image fetching library)
+    const val glide = "4.11.0"
 }

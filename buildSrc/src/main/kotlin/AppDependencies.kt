@@ -56,6 +56,19 @@ object AppDependencies {
     // Coroutines
     private const val coroutineKtx = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutinesKtx}"
 
+    // Glide
+    private const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+    private const val glideAnnotation = "com.github.bumptech.glide:compiler:${Versions.glide}"
+
+    // Glide libraries
+    val glideLibraries = arrayListOf<String>().apply {
+        add(glide)
+    }
+
+    val glideAnnotationLibraries = arrayListOf<String>().apply {
+        add(glideAnnotation)
+    }
+
     // Networking libraries
     val networkingLibraries = arrayListOf<String>().apply {
         add(retrofit)

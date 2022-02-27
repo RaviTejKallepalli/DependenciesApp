@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.ravitej.dependenciesapp.splash.SplashFragment"
+        android:name="com.ravitej.dependenciesapp.ui.splash.SplashFragment"
         android:label="Welcome"
         tools:layout="@layout/fragment_splash" />
 </navigation>

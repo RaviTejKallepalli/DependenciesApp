@@ -42,6 +42,10 @@ android {
         viewBinding = true
         dataBinding = true
     }
+
+    kapt {
+        correctErrorTypes = true
+    }
 }
 
 dependencies {
@@ -76,4 +80,8 @@ dependencies {
     // Networking libraries
     implementation(AppDependencies.networkingLibraries)
     kapt(AppDependencies.networkingAnnotationProcessor)
+
+    // Glide
+    implementation(AppDependencies.glideLibraries)
+    kapt(AppDependencies.glideAnnotationLibraries)
 }

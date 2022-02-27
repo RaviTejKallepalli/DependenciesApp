@@ -1,4 +1,4 @@
-package com.ravitej.dependenciesapp.splash
+package com.ravitej.dependenciesapp.ui.splash
 
 import android.os.Bundle
 import androidx.lifecycle.ViewModel
