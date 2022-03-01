@@ -3,11 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/serviceFragment">
 
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.ravitej.dependenciesapp.ui.splash.SplashFragment"
         android:label="Welcome"
         tools:layout="@layout/fragment_splash" />
+
+    <fragment
+        android:id="@+id/serviceFragment"
+        android:name="com.ravitej.dependenciesapp.ui.ServiceFragment"
+        android:label="Service sample"
+        tools:layout="@layout/fragment_service" />
 </navigation>
