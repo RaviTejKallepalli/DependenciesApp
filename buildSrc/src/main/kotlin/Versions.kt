@@ -13,9 +13,12 @@ object Versions {
     const val constraintLayout = "2.1.3"
 
     // test
+    const val junit5Plugin = "1.3.2.0"
+    const val junit5 = "5.3.2"
     const val junit = "4.13.2"
     const val extJunit = "1.1.3"
     const val espresso = "3.4.0"
+    const val mockitoKotlin = "4.0.0"
 
     // dependency injection
     const val hilt = "2.38.1"

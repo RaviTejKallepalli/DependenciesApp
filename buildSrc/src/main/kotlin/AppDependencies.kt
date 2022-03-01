@@ -11,6 +11,14 @@ object AppDependencies {
     private const val junit = "junit:junit:${Versions.junit}"
     private const val extJUnit = "androidx.test.ext:junit:${Versions.extJunit}"
     private const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+    private const val mockitoKotlin = "org.mockito.kotlin:mockito-kotlin:${Versions.mockitoKotlin}"
+
+    // Junit5
+    const val junit5Plugin = "de.mannodermaus.gradle.plugins:android-junit5:${Versions.junit5Plugin}"
+    private const val junitJupiterApi = "org.junit.jupiter:junit-jupiter-api:${Versions.junit5}"
+    private const val junitJupiterEngine = "org.junit.jupiter:junit-jupiter-engine:${Versions.junit5}"
+    private const val junitParams = "org.junit.jupiter:junit-jupiter-params:${Versions.junit5}"
+    private const val junitVintageEngine = "org.junit.vintage:junit-vintage-engine:${Versions.junit5}"
 
     // dependency injection
     const val hiltAndroidGradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}"
@@ -55,6 +63,7 @@ object AppDependencies {
 
     // Coroutines
     private const val coroutineKtx = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutinesKtx}"
+    private const val coroutinesTesting = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesKtx}"
 
     // Glide
     private const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
@@ -120,8 +129,17 @@ object AppDependencies {
         add(espressoCore)
     }
 
+    val testRuntimeEngines = arrayListOf<String>().apply {
+//        add(junitJupiterEngine)
+//        add(junitVintageEngine)
+    }
+
     val testLibraries = arrayListOf<String>().apply {
         add(junit)
+        add(mockitoKotlin)
+        add(coroutinesTesting)
+//        add(junitJupiterApi)
+//        add(junitParams)
     }
 
     // Hilt libraries

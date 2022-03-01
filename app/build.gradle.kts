@@ -1,3 +1,5 @@
+import Versions.coroutinesKtx
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -8,6 +10,9 @@ plugins {
 
     // nav safe args
     id("androidx.navigation.safeargs.kotlin")
+
+    // juni5
+//    id("de.mannodermaus.android-junit5")
 }
 
 android {
@@ -55,6 +60,7 @@ dependencies {
     // test libraries
     testImplementation(AppDependencies.testLibraries)
     androidTestImplementation(AppDependencies.androidTestLibraries)
+    testRunTime(AppDependencies.testRuntimeEngines)
 
     // dependency injection(HILT)
     implementation(AppDependencies.hiltLibraries)
@@ -84,4 +90,6 @@ dependencies {
     // Glide
     implementation(AppDependencies.glideLibraries)
     kapt(AppDependencies.glideAnnotationLibraries)
+
+    testImplementation("io.mockk:mockk:1.12.2")
 }

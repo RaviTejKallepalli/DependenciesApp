@@ -12,6 +12,12 @@ fun DependencyHandler.implementation(list: List<String>) {
     }
 }
 
+fun DependencyHandler.testRunTime(list: List<String>) {
+    list.forEach { dependency ->
+        add("testRuntimeOnly", dependency)
+    }
+}
+
 fun DependencyHandler.androidTestImplementation(list: List<String>) {
     list.forEach { dependency ->
         add("androidTestImplementation", dependency)

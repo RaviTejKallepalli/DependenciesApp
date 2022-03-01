@@ -4,6 +4,7 @@ buildscript {
     dependencies {
         classpath(AppDependencies.hiltAndroidGradlePlugin)
         classpath(AppDependencies.navSafeArgsPlugin)
+//        classpath(AppDependencies.junit5Plugin)
     }
 }
 
